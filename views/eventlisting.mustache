@@ -1,93 +1,216 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Home Page</title>
-  <link rel="stylesheet" href="/output.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Home Page</title>
+    <link rel="stylesheet" href="/output.css" />
 
-  <!-- Font Awesome link -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- Font Awesome link -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+      integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+  </head>
+  <body class="bg-color-primary text-color-white tracker-wider">
+    <header>
+      <nav class="container flex justify-between items-center">
+        <div class="py-5 text-color-secondary font-bold text-3xl">
+          <a href="#home"><span class="text-color-white">Nifes</span>Alumni</a>
+        </div>
 
-</head>
-<body class="bg-color-primary text-color-white tracker-wider">
+        <div>
+          <ul class="hidden lg:flex items-center space-x-6">
+            <li>
+              <a
+                href="/home.html"
+                class="hover:text-color-secondary ease-in duration-200"
+                >Home</a
+              >
+            </li>
+            <li>
+              <a
+                href="#about"
+                class="hover:text-color-secondary ease-in duration-200"
+                >About Us</a
+              >
+            </li>
+            <li>
+              <a
+                href="#Event"
+                class="hover:text-color-secondary ease-in duration-200"
+                >Event</a
+              >
+            </li>
+            <li>
+              <a
+                href="#Contact"
+                class="hover:text-color-secondary ease-in duration-200"
+                >Contact Us</a
+              >
+            </li>
 
-<header>
-  <nav class="container flex justify-between items-center">
-    <div class="py-5 text-color-secondary font-bold text-3xl">
-      <a href="#home"><span class="text-color-white">Nifes</span>Alumni</a>
+            <li>
+              <a
+                href="signin.html"
+                class="bg-color-secondary px-9 py-2 rounded-md capitalize font-bold hover:opacity-20 ease-in duration-200"
+                >Sign In</a
+              >
+            </li>
+          </ul>
+        </div>
+        <!-- Mobile View -->
+        <div id="hamburger" class="lg:hidden cursor-pointer z-50">
+          <i class="fa-solid fa-bars"> </i>
+        </div>
+
+        <div
+          id="menu"
+          class="hidden bg-color-primary-dark h-[100vh] absolute inset-0"
+        >
+          <ul class="h-full grid place-items-center">
+            <li>
+              <a
+                id="hLink"
+                href="/home.html"
+                class="hover:text-color-secondary ease-in duration-200"
+                >Home</a
+              >
+            </li>
+            <li>
+              <a
+                id="hLink"
+                href="#about"
+                class="hover:text-color-secondary ease-in duration-200"
+                >About Us</a
+              >
+            </li>
+            <li>
+              <a
+                id="hLink"
+                href="#Event"
+                class="hover:text-color-secondary ease-in duration-200"
+                >Event</a
+              >
+            </li>
+            <li>
+              <a
+                id="hLink"
+                href="#Contact"
+                class="hover:text-color-secondary ease-in duration-200"
+                >Contact Us</a
+              >
+            </li>
+
+            <li>
+              <a
+                href="signin.html"
+                class="bg-color-secondary px-9 py-2 rounded-md capitalize font-bold hover:opacity-20 ease-in duration-200"
+                >Sign In</a
+              >
+            </li>
+          </ul>
+        </div>
+      </nav>
+    </header>
+
+    <div class="text-black">
+      <div class="grid grid-cols-4 gap-10">
+        {{#createdEvents}}
+        <div class="bg-white p-4 rounded-lg border border-gray-300 shadow-lg">
+          <p class="text-gray-600">{{ category }}</p>
+          <img {{eventPoster}} />
+          <p class="text-xl font-semibold text-black mb-2">{{ title }}</p>
+          <p class="text-gray-600">{{ description }}</p>
+          <p class="text-gray-600">{{ date }}</p>
+          <p class="text-gray-600">{{ fullAddress }}</p>
+          <p class="text-gray-600">{{ numberOfSpeakers }}</p>
+          <p class="text-gray-600">{{ numberOfDays }}</p>
+          <button
+            id="{{ id }}"
+            class="edit-event bg-blue-500 text-white px-2 py-1 rounded hover:bg-blue-600 edit-button"
+          >
+            Edit
+          </button>
+          <button
+            class="bg-blue-500 text-white px-2 py-1 rounded hover-bg-blue-600"
+          >
+            Delete
+          </button>
+        </div>
+
+        <!-- Update event -->
+        <div
+          id="{{ id }}"
+          class="edit-event-modal absolute inset-0 hidden flex items-center justify-center"
+        >
+          <form
+            class="edit-form bg-white p-4 rounded-lg border border-gray-300 shadow-lg"
+            action="/updateEvent/{{ id }}"
+            method="POST"
+          >
+            <!-- Input fields to edit event information -->
+            <input
+              class="block w-full"
+              type="text"
+              name="editedCategory"
+              placeholder="Edit Category"
+              value="{{ category }}"
+            />
+            <input
+              class="block w-full"
+              type="text"
+              name="editedTitle"
+              placeholder="Edit Title"
+              value="{{ title }}"
+            />
+            <input
+              class="block w-full"
+              type="text"
+              name="editedDescription"
+              placeholder="Edit Description"
+              value="{{ description }}"
+            />
+            <input
+              class="block w-full"
+              type="date"
+              name="editedDate"
+              placeholder="Edit Date"
+              value="{{ date }}"
+            />
+            <input
+              class="block w-full"
+              type="text"
+              name="editedFullAddress"
+              placeholder="Edit FullAddress"
+              value="{{ fullAddress }}"
+            />
+            <input
+              class="block w-full"
+              type="text"
+              name="editedNumberOfSpeakers"
+              placeholder="Edit NumberOfSpeakers"
+              value="{{ numberOfSpeakers }}"
+            />
+            <input
+              class="block w-full"
+              type="text"
+              name="editedNumberOfDays"
+              placeholder="Edit NumberOfDays"
+              value="{{ numberOfDays }}"
+            />
+
+            <!-- Add more input fields for other properties -->
+            <button type="submit" class="block w-full">Save</button>
+          </form>
+        </div>
+        {{/createdEvents}}
+      </div>
     </div>
 
-    <div>
-      <ul class="hidden lg:flex items-center space-x-6">
-        <li> <a href="/home.html" class="hover:text-color-secondary ease-in duration-200">Home</a></li>
-        <li> <a href="#about" class="hover:text-color-secondary ease-in duration-200">About Us</a></li>
-        <li> <a href="#Event" class="hover:text-color-secondary ease-in duration-200">Event</a></li>
-        <li> <a href="#Contact" class="hover:text-color-secondary ease-in duration-200">Contact Us</a></li>
-
-        <li> <a href="signin.html" class="bg-color-secondary px-9 py-2 rounded-md capitalize font-bold hover:opacity-20 ease-in duration-200">Sign In</a></li>
-      </ul>
-    </div>
-    <!-- Mobile View -->
-    <div id="hamburger" class="lg:hidden cursor-pointer z-50">
-      <i class="fa-solid fa-bars"> </i>
-    </div>
-
-    <div id="menu" class="hidden bg-color-primary-dark h-[100vh] absolute inset-0">
-      <ul class="h-full grid place-items-center">
-        <li> <a id="hLink" href="/home.html" class="hover:text-color-secondary ease-in duration-200">Home</a></li>
-        <li> <a id="hLink" href="#about" class="hover:text-color-secondary ease-in duration-200">About Us</a></li>
-        <li> <a id="hLink" href="#Event" class="hover:text-color-secondary ease-in duration-200">Event</a></li>
-        <li> <a id="hLink" href="#Contact" class="hover:text-color-secondary ease-in duration-200">Contact Us</a></li>
-
-        <li> <a href="signin.html" class="bg-color-secondary px-9 py-2 rounded-md capitalize font-bold hover:opacity-20 ease-in duration-200">Sign In</a></li>
-      </ul>
-
-    </div>
-  </nav>
-</header>
-
-<div class=" text-black">
-<div class="grid grid-cols-5 gap-10 ">
-{{#createdEvents}}
-<div class="bg-white p-4 rounded-lg border border-gray-300 shadow-lg">
-<p class="text-gray-600">{{category}}</p>
-<img {{eventPoster}}>
-<p class="text-xl font-semibold text-black mb-2">{{title}}</p>
-<p class="text-gray-600">{{description}}</p>
-<p class="text-gray-600">{{date}}</p>
-<p class="text-gray-600">{{fullAddress}}</p>
-<p class="text-gray-600">{{numberOfSpeakers}}</p>
-<p class="text-gray-600">{{numberOfDays}}</p>
-<button class="bg-blue-500 text-white px-2 py-1 rounded hover:bg-blue-600">Edit</button>
-<button class="bg-blue-500 text-white px-2 py-1 rounded hover:bg-blue-600">Delete</button>
-</div>
-
-
-{{/createdEvents}}
-      <!-- Edit Form (initially hidden) -->
-          <div id="editForm{{eventId}}">
-            <form action="{{/createEvent/Id}}">
-              <!-- Input fields to edit event information -->
-              <input type="text" name="editedCategory" placeholder="Edit Category" value="{{category}}">
-              <input type="text" name="editedTitle" placeholder="Edit Title" value="{{title}}">
-              <input type="text" name="editedDescription" placeholder="Edit Description" value="{{description}}">
-              <input type="date" name="editedDate" placeholder="Edit Date" value="{{date}}">
-              <input type="text" name="editedFullAddress" placeholder="Edit FullAddress" value="{{fullAddress}}">
-              <input type="text" name="editedNumberOfSpeakers" placeholder="Edit NumberOfSpeakers" value="{{numberOfSpeakers}}">
-              <input type="text" name="editedNumberOfDays" placeholder="Edit NumberOfDays" value="{{NumberOfDays}}">
-
-
-              <!-- Add more input fields for other properties -->
-              <button type="submit" onclick="hideEditForm">Save</button>
-            </form>
-          </div>
-
-
-</div>
-
-
-</div>
-</body>
-
+    <script src="/js/updateEvent.js"></script>
+  </body>
 </html>
