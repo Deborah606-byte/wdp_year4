@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Edit Event</title>
+  <link rel="stylesheet" href="/output.css">
+
+  <!-- Font Awesome link -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+</head>
+<body class="bg-color-primary text-color-white tracker-wider">
+  <h2>Edit Event</h2>
+
+  <form id="editEventForm" action="/editEvent/{{eventId}}" method="POST">
+    <div class="grid gap-4 sm:grid-cols-2 sm:gap-6">
+      <!-- Update event details here, e.g., event category, event title, etc. -->
+      <div>
+        <label for="category" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Event Category</label>
+        <select id="category" name="category" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500" required>
+          <!-- Add options for event categories -->
+        </select>
+      </div>
+      <!-- Add more input fields for event details -->
+    </div>
+    <button type="submit" class="inline-flex items-center px-5 py-2.5 mt-4 sm:mt-6 text-sm font-medium text-center bg-gray-50 border border-gray-300 text-black bg-primary-700 rounded-lg focus:ring-primary-600">
+      Save Changes
+    </button>
+  </form>
+
+  <!-- Custom Js -->
+  <script src="/js/editEvent.js"></script>
+
+</body>
+</html>

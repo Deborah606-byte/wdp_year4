@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Home Page</title>
+  <link rel="stylesheet" href="/output.css">
+
+  <!-- Font Awesome link -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+</head>
+<body class="bg-color-primary text-color-white tracker-wider">
+
+<header>
+  <nav class="container flex justify-between items-center">
+    <div class="py-5 text-color-secondary font-bold text-3xl">
+      <a href="#home"><span class="text-color-white">Nifes</span>Alumni</a>
+    </div>
+
+    <div>
+      <ul class="hidden lg:flex items-center space-x-6">
+        <li> <a href="#home" class="hover:text-color-secondary ease-in duration-200">Home</a></li>
+        <li> <a href="#about" class="hover:text-color-secondary ease-in duration-200">About Us</a></li>
+        <li> <a href="#Event" class="hover:text-color-secondary ease-in duration-200">Event</a></li>
+        <li> <a href="#Contact" class="hover:text-color-secondary ease-in duration-200">Contact Us</a></li>
+
+        <li> <a href="signin.html" class="bg-color-secondary px-9 py-2 rounded-md capitalize font-bold hover:opacity-20 ease-in duration-200">Sign In</a></li>
+
+        <!-- <li><button class="bg-color-secondary px-9 py-2 rounded-md capitalize font-bold hover:opacity-20 ease-in duration-200">Sign In</button></li> -->
+
+      </ul>
+    </div>
+    <!-- Mobile View -->
+    <div id="hamburger" class="lg:hidden cursor-pointer z-50">
+      <i class="fa-solid fa-bars"> </i>
+    </div>
+
+    <div id="menu" class="hidden bg-color-primary-dark h-[100vh] absolute inset-0">
+      <ul class="h-full grid place-items-center">
+        <li> <a id="hLink" href="#home" class="hover:text-color-secondary ease-in duration-200">Home</a></li>
+        <li> <a id="hLink" href="#about" class="hover:text-color-secondary ease-in duration-200">About Us</a></li>
+        <li> <a id="hLink" href="#Event" class="hover:text-color-secondary ease-in duration-200">Event</a></li>
+        <li> <a id="hLink" href="#Contact" class="hover:text-color-secondary ease-in duration-200">Contact Us</a></li>
+
+        <li> <a href="signin.html" class="bg-color-secondary px-9 py-2 rounded-md capitalize font-bold hover:opacity-20 ease-in duration-200">Sign In</a></li>
+
+        <!-- <li><button class="bg-color-secondary px-9 py-2 rounded-md capitalize font-bold hover:opacity-20 ease-in duration-200">Sign In</button></li> -->
+      </ul>
+    </div>
+  </nav>
+</header>
+
+
+
+
+
+<!-- Custom Js -->
+<script src="/js/home.js"></script>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+
+</body>
+</html>

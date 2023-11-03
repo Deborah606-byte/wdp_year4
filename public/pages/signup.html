@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Home Page</title>
+  <link rel="stylesheet" href="/output.css">
+
+  <!-- Font Awesome link -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+</head>
+<body class="bg-color-primary text-color-white tracker-wider">
+
+<header>
+  <nav class="container flex justify-between items-center">
+    <div class="py-5 text-color-secondary font-bold text-3xl">
+      <a href="#home"><span class="text-color-white">Nifes</span>Alumni</a>
+    </div>
+
+    <div>
+      <ul class="hidden lg:flex items-center space-x-6">
+        <li> <a href="/home.html" class="hover:text-color-secondary ease-in duration-200">Home</a></li>
+        <li> <a href="#about" class="hover:text-color-secondary ease-in duration-200">About Us</a></li>
+        <li> <a href="#Event" class="hover:text-color-secondary ease-in duration-200">Event</a></li>
+        <li> <a href="#Contact" class="hover:text-color-secondary ease-in duration-200">Contact Us</a></li>
+
+        <li> <a href="signin.html" class="bg-color-secondary px-9 py-2 rounded-md capitalize font-bold hover:opacity-20 ease-in duration-200">Sign In</a></li>
+      </ul>
+    </div>
+    <!-- Mobile View -->
+    <div id="hamburger" class="lg:hidden cursor-pointer z-50">
+      <i class="fa-solid fa-bars"> </i>
+    </div>
+
+    <div id="menu" class="hidden bg-color-primary-dark h-[100vh] absolute inset-0">
+      <ul class="h-full grid place-items-center">
+        <li> <a id="hLink" href="/home.html" class="hover:text-color-secondary ease-in duration-200">Home</a></li>
+        <li> <a id="hLink" href="#about" class="hover:text-color-secondary ease-in duration-200">About Us</a></li>
+        <li> <a id="hLink" href="#Event" class="hover:text-color-secondary ease-in duration-200">Event</a></li>
+        <li> <a id="hLink" href="#Contact" class="hover:text-color-secondary ease-in duration-200">Contact Us</a></li>
+
+        <li> <a href="signin.html" class="bg-color-secondary px-9 py-2 rounded-md capitalize font-bold hover:opacity-20 ease-in duration-200">Sign In</a></li>
+      </ul>
+
+    </div>
+  </nav>
+</header>
+
+
+
+<div class="container mx-auto py-8">
+  <div class="max-w-md mx-auto bg-white p-8 rounded shadow-md">
+      <h2 class="text-2xl font-bold mb-4">Registration Form</h2>
+      <form id="registrationForm" action="/user" method="POST">
+        <div class="mb-4">
+          <label for="fullName" class="block text-gray-700 font-bold mb-2">Full Name:</label>
+          <input type="text" id="fullName" name="fullName" class="w-full px-3 py-2 border border-gray-300 rounded focus:outline-none focus:border-blue-500 text-black" required>
+        </div>
+        <div class="mb-4">
+          <label for="username" class="block text-gray-700 font-bold mb-2">Username:</label>
+          <input type="text" id="username" name="username" class="w-full px-3 py-2 border border-gray-300 rounded focus:outline-none focus:border-blue-500 text-black" required>
+        </div>
+        <div class="mb-4">
+          <label for="email" class="block text-gray-700 font-bold mb-2">Email:</label>
+          <input type="email" id="email" name="email" class="w-full px-3 py-2 border border-gray-300 rounded focus:outline-none focus:border-blue-500 text-black" required>
+        </div>
+        <div class="mb-4">
+          <label for="phoneNumber" class="block text-gray-700 font-bold mb-2">Phone Number:</label>
+          <input type="tel" id="phoneNumber" name="phoneNumber" class="w-full px-3 py-2 border border-gray-300 rounded focus:outline-none focus:border-blue-500 text-black" required>
+        </div>
+        <div class="mb-4">
+          <label for="department" class="block text-gray-700 font-bold mb-2">Department Graduated From:</label>
+          <input type="text" id="department" name="department" class="w-full px-3 py-2 border border-gray-300 rounded focus:outline-none focus:border-blue-500 text-black" required>
+        </div>
+        <div class="mb-4">
+          <label for="country" class="block text-gray-700 font-bold mb-2">Country:</label>
+          <input type="text" id="country" name="country" class="w-full px-3 py-2 border border-gray-300 rounded focus:outline-none focus:border-blue-500 text-black" required>
+        </div>
+       
+        <div class="mb-4">
+          <label for="yearEntering" class="block text-gray-700 font-bold mb-2">Year of Entering School:</label>
+          <input type="date" id="yearEntering" name="yearEntering" class="w-full px-3 py-2 border border-gray-300 rounded focus:outline-none focus:border-blue-500 text-black" required>
+        </div>
+        <div class="mb-4">
+          <label for="yearGraduation" class="block text-gray-700 font-bold mb-2">Year of Graduation:</label>
+          <input type="date" id="yearGraduation" name="yearGraduation" class="w-full px-3 py-2 border border-gray-300 rounded focus:outline-none focus:border-blue-500 text-black" required>
+        </div>
+        <div class="mb-4">
+          <label for="password" class="block text-gray-700 font-bold mb-2">Password:</label>
+          <input type="password" id="password" name="password" class="w-full px-3 py-2 border border-gray-300 rounded focus:outline-none focus:border-blue-500 text-black" required>
+        </div>
+        <div class="mb-4">
+          <label for="confirmPassword" class="block text-gray-700 font-bold mb-2">Confirm Password:</label>
+          <input type="password" id="confirmPassword" name="confirmPassword" class="w-full px-3 py-2 border border-gray-300 rounded focus:outline-none focus:border-blue-500 text-black" required>
+        </div>
+        <button type="submit" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">Submit</button>
+      </form>
+      
+  </div>
+</div>
+
+
+ <!-- footer design -->
+ <footer class="footer flex p-8 md:p-2 justify-between items-center flex-wrap">
+  <div class="footer-text text-2xl">
+    <p>Copyright &copy; 2023 by JNTeck| All Rights Reserved.</p>
+  </div>
+
+  <div class="footer-iconTop">
+    <a href="#home" class="inline-flex items-center justify-center p-8 bg-main-color rounded-lg transition duration-500 ease-in-out transform hover:shadow-lg">
+       <i class=" text-second-bg-color text-2xl fa-solid fa-arrow-up-long"></i></a>
+  </div>
+</footer>
+
+
+
+<!-- Custom Js -->
+<script src="/js/home.js"></script>
+
+</body>
+</html>

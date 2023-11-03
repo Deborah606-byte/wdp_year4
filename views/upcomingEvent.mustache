@@ -1,0 +1,16 @@
+<!-- ... -->
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+    {{#events}}
+    <div class="bg-white p-4 rounded-lg shadow-lg">
+        <div class="mb-4">
+            <img src="{{eventPoster}}" alt="{{eventTitle}}" class="w-full h-48 object-cover rounded-lg">
+        </div>
+        <h2 class="text-xl font-semibold mb-2">{{eventTitle}}</h2>
+        <p class="text-gray-600 mb-2">{{eventCategory}}</p>
+        <p class="text-gray-700">{{eventDate}}</p>
+        <p class="text-gray-700">{{eventAddress}}</p>
+        <p class="mt-4">{{eventDescription}}</p>
+    </div>
+    {{/events}}
+</div>
+<!-- ... -->

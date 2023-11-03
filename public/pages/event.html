@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Home Page</title>
+  <link rel="stylesheet" href="/output.css">
+
+  <!-- Font Awesome link -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+</head>
+<body class="bg-color-primary text-color-white tracker-wider">
+
+<header>
+  <nav class="container flex justify-between items-center">
+    <div class="py-5 text-color-secondary font-bold text-3xl">
+      <a href="#home"><span class="text-color-white">Nifes</span>Alumni</a>
+    </div>
+
+    <div>
+      <ul class="hidden lg:flex items-center space-x-6">
+        <li> <a href="/home.html" class="hover:text-color-secondary ease-in duration-200">Home</a></li>
+        <li> <a href="#about" class="hover:text-color-secondary ease-in duration-200">About Us</a></li>
+        <li> <a href="#Event" class="hover:text-color-secondary ease-in duration-200">Event</a></li>
+        <li> <a href="#Contact" class="hover:text-color-secondary ease-in duration-200">Contact Us</a></li>
+
+        <li> <a href="signin.html" class="bg-color-secondary px-9 py-2 rounded-md capitalize font-bold hover:opacity-20 ease-in duration-200">Sign In</a></li>
+      </ul>
+    </div>
+    <!-- Mobile View -->
+    <div id="hamburger" class="lg:hidden cursor-pointer z-50">
+      <i class="fa-solid fa-bars"> </i>
+    </div>
+
+    <div id="menu" class="hidden bg-color-primary-dark h-[100vh] absolute inset-0">
+      <ul class="h-full grid place-items-center">
+        <li> <a id="hLink" href="/home.html" class="hover:text-color-secondary ease-in duration-200">Home</a></li>
+        <li> <a id="hLink" href="#about" class="hover:text-color-secondary ease-in duration-200">About Us</a></li>
+        <li> <a id="hLink" href="#Event" class="hover:text-color-secondary ease-in duration-200">Event</a></li>
+        <li> <a id="hLink" href="#Contact" class="hover:text-color-secondary ease-in duration-200">Contact Us</a></li>
+
+        <li> <a href="signin.html" class="bg-color-secondary px-9 py-2 rounded-md capitalize font-bold hover:opacity-20 ease-in duration-200">Sign In</a></li>
+      </ul>
+
+    </div>
+  </nav>
+</header>
+
+<!-- Create an event -->
+<section class="bg-white dark:bg-gray-900">
+  <div class="py-8 px-4 mx-auto max-w-2xl lg:py-16">
+    <h2 class="mb-4 text-xl font-bold text-gray-900 dark:text-white">Create an Event</h2>
+    <form id="eventForm" action="/createEvent" method="POST">
+      <div class="grid gap-4 sm:grid-cols-2 sm:gap-6">
+        <div>
+          <label for="category" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Event Category</label>
+          <select id="category" name="category" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500" required>
+            <option value="professional development">Professional Development</option>
+            <option value="networking">Networking</option>
+            <option value="campus events">Campus Events</option>
+          </select>
+        </div>
+        <div>
+          <label for="eventPoster" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Event Poster (Upload Image)</label>
+          <input type="file" name="eventPoster" id="eventPoster" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500" accept="image/*" required>
+        </div>
+        <div class="sm:col-span-2">
+          <label for="title" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Event Title</label>
+          <input type="text" name="title" id="title" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500" placeholder="Enter the event title" required>
+        </div>
+        <div class="sm:col-span-2">
+          <label for="description" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Event Description</label>
+          <textarea id="description" name="description" rows="4" class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-primary-600 focus:border-primary-600 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500" placeholder="Enter the event description" required></textarea>
+        </div>
+        <div>
+          <label for="date" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Event Date</label>
+          <input type="date" name="date" id="date" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500" required>
+        </div>
+        <div>
+          <label for="fullAddress" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Event Address</label>
+          <input type="text" name="fullAddress" id="fullAddress" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500" placeholder="Enter the event address" required>
+        </div>
+        <div>
+          <label for="numberOfSpeakers" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Number of Speakers</label>
+          <input type="number" name="numberOfSpeakers" id="numberOfSpeakers" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500" placeholder="Enter the number of speakers" required>
+        </div>
+        <div>
+          <label for="numberOfDays" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Number of Days</label>
+          <input type="number" name="numberOfDays" id="numberOfDays" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500" placeholder="Enter the number of days" required>
+        </div>
+      </div>
+      <button type="submit" class="inline-flex items-center px-5 py-2.5 mt-4 sm:mt-6 text-sm font-medium text-center bg-gray-50 border border-gray-300 text-black bg-primary-700 rounded-lg focus:r">
+        Create Event
+      </button>
+    </form>
+  </div>
+</section>
+
+
+  
+
+
+ <!-- footer design -->
+ <footer class="footer flex p-8 md:p-2 justify-between items-center flex-wrap">
+  <div class="footer-text text-2xl">
+    <p>Copyright &copy; 2023 by JNTeck| All Rights Reserved.</p>
+  </div>
+
+  <div class="footer-iconTop">
+    <a href="#home" class="inline-flex items-center justify-center p-8 bg-main-color rounded-lg transition duration-500 ease-in-out transform hover:shadow-lg">
+       <i class=" text-second-bg-color text-2xl fa-solid fa-arrow-up-long"></i></a>
+  </div>
+</footer>
+
+
+
+<!-- Custom Js -->
+<script src="/js/home.js"></script>
+
+</body>
+</html>

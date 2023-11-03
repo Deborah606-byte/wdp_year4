@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Home Page</title>
+  <link rel="stylesheet" href="/output.css">
+
+  <!-- Font Awesome link -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+</head>
+<body class="bg-color-primary text-color-white tracker-wider">
+
+<header>
+  <nav class="container flex justify-between items-center">
+    <div class="py-5 text-color-secondary font-bold text-3xl">
+      <a href="#home"><span class="text-color-white">Nifes</span>Alumni</a>
+    </div>
+
+    <div>
+      <ul class="hidden lg:flex items-center space-x-6">
+        <li> <a href="#home" class="hover:text-color-secondary ease-in duration-200">Home</a></li>
+        <li> <a href="about.html" class="hover:text-color-secondary ease-in duration-200">About Us</a></li>
+        <li> <a href="/views/eventlisting.mustache" class="hover:text-color-secondary ease-in duration-200">Event</a></li>
+        <li> <a href="#Contact" class="hover:text-color-secondary ease-in duration-200">Contact Us</a></li>
+
+        <li> <a href="/pages/signin.html" class="bg-color-secondary px-9 py-2 rounded-md capitalize font-bold hover:opacity-20 ease-in duration-200">Sign In</a></li>
+
+
+        <!-- <li><button class="bg-color-secondary px-9 py-2 rounded-md capitalize font-bold hover:opacity-20 ease-in duration-200">Sign In</button></li> -->
+
+      </ul>
+    </div>
+    <!-- Mobile View -->
+    <div id="hamburger" class="lg:hidden cursor-pointer z-50">
+      <i class="fa-solid fa-bars"> </i>
+    </div>
+
+    <div id="menu" class="hidden bg-color-primary-dark h-[100vh] absolute inset-0">
+      <ul class="h-full grid place-items-center">
+        <li> <a id="hLink" href="#home" class="hover:text-color-secondary ease-in duration-200">Home</a></li>
+        <li> <a id="hLink" href="/pages/about.html" class="hover:text-color-secondary ease-in duration-200">About Us</a></li>
+        <li> <a id="hLink" href="/views/eventlisting.mustache" class="hover:text-color-secondary ease-in duration-200">Event</a></li>
+        <li> <a id="hLink" href="#Contact" class="hover:text-color-secondary ease-in duration-200">Contact Us</a></li>
+
+        <li> <a href="/pages/signin.html" class="bg-color-secondary px-9 py-2 rounded-md capitalize font-bold hover:opacity-20 ease-in duration-200">Sign In</a></li>
+
+        <!-- <li><button class="bg-color-secondary px-9 py-2 rounded-md capitalize font-bold hover:opacity-20 ease-in duration-200">Sign In</button></li> -->
+      </ul>
+
+    </div>
+  </nav>
+</header>
+
+
+<section id="home" class="relative">
+    <div class="w-80 h-80 bg-color-blob absolute top-0 -left-5 -z-10 blur-2xl opacity-30 overflow-hidden rounded-full"></div>
+    <div class="w-80 h-80 bg-color-secondary absolute bottom-10 right-0 -z-10 blur-2xl opacity-30 overflow-hidden rounded-full"></div>
+    <div class="container py-20">
+        <div class="flex flex-col items-center z-20 md:flex-row">
+            <div class="text-center mb-12 md:text-left md:w-1/2 md:pr-10">
+                <h1 class="text-3xl md:text-4xl font-bold leading-snug">Awesome App for Your Financial.</h1>
+                <p class="leading-relaxed mb-10">This should be used to tell a story and let your users know a little more about app and it’s use, How can benefit them.</p>
+                <a href="/pages/signup.html" class="bg-color-secondary px-9 py-2 rounded-md capitalize font-bold hover:opacity-20 ease-in duration-200">Join Us</a>
+            </div>
+            <div class="md:w-1/2">
+                <img src="/images/Home.png" alt="">
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+
+<section id="faqs" class="bg-color-blob shadow-md inset-0 h-3rem bg-opacity-50 pt-7">
+  <h1 class="flex items-center justify-center text-3xl  ">frequently Asked Questions</h1>
+  <div class="container grid grid-cols-2 gap-4">
+    <article id="faq" class="p-8 flex items-center bg-black h-auto gap-5 cursor-pointer">
+      <div id="faq_icon" class="align-self-start text-lg"><i class="fa-solid fa-plus"></i></div>
+      <div> 
+        <h4 class="text-base leading-10">How Do I register for this?</h4>
+        <p class="mt-2 hidden">
+          hgsghdjlsadjhjgvsbdnskjbhaghsavdbknbjhvgbanjhfdaghdjhksah
+          hsagdjkasjhsgdhjKSADGHJSBHDJSAHkjahhjsahdskajshvhdbsvcgvxhb
+          sbhvdgahjhsshg
+        </p>
+      </div>
+    </article>
+
+    <article id="faq" class="p-8 flex items-center bg-black h-auto gap-5 cursor-pointer">
+      <div id="faq_icon" class="align-self-start text-lg"><i class="fa-solid fa-plus"></i></div>
+      <div> 
+        <h4 class="text-base leading-10">How Do I register for this?</h4>
+        <p class="mt-2 hidden">
+          hgsghdjlsadjhjgvsbdnskjbhaghsavdbknbjhvgbanjhfdaghdjhksah
+          hsagdjkasjhsgdhjKSADGHJSBHDJSAHkjahhjsahdskajshvhdbsvcgvxhb
+          sbhvdgahjhsshg
+        </p>
+      </div>
+    </article>
+
+    <article id="faq" class="p-8 flex items-center bg-black h-auto gap-5 cursor-pointer">
+      <div id="faq_icon" class="align-self-start text-lg"><i class="fa-solid fa-plus"></i></div>
+      <div> 
+        <h4 class="text-base leading-10">How Do I register for this?</h4>
+        <p class="mt-2 hidden">
+          hgsghdjlsadjhjgvsbdnskjbhaghsavdbknbjhvgbanjhfdaghdjhksah
+          hsagdjkasjhsgdhjKSADGHJSBHDJSAHkjahhjsahdskajshvhdbsvcgvxhb
+          sbhvdgahjhsshg
+        </p>
+      </div>
+    </article>
+
+    <article id="faq" class="p-8 flex items-center bg-black h-auto gap-5 cursor-pointer">
+      <div id="faq_icon" class="align-self-start text-lg"><i class="fa-solid fa-plus"></i></div>
+      <div> 
+        <h4 class="text-base leading-10">How Do I register for this?</h4>
+        <p class="mt-2 hidden">
+          hgsghdjlsadjhjgvsbdnskjbhaghsavdbknbjhvgbanjhfdaghdjhksah
+          hsagdjkasjhsgdhjKSADGHJSBHDJSAHkjahhjsahdskajshvhdbsvcgvxhb
+          sbhvdgahjhsshg
+        </p>
+      </div>
+    </article>
+
+    <article id="faq" class="p-8 flex items-center bg-black h-auto gap-5 cursor-pointer">
+      <div id="faq_icon" class="align-self-start text-lg"><i class="fa-solid fa-plus"></i></div>
+      <div> 
+        <h4 class="text-base leading-10">How Do I register for this?</h4>
+        <p class="mt-2 hidden">
+          hgsghdjlsadjhjgvsbdnskjbhaghsavdbknbjhvgbanjhfdaghdjhksah
+          hsagdjkasjhsgdhjKSADGHJSBHDJSAHkjahhjsahdskajshvhdbsvcgvxhb
+          sbhvdgahjhsshg
+        </p>
+      </div>
+    </article>
+
+    <article id="faq" class="p-8 flex items-center bg-black h-auto gap-5 cursor-pointer">
+      <div id="faq_icon" class="align-self-start text-lg"><i class="fa-solid fa-plus"></i></div>
+      <div class="w-4/5"> 
+        <h4 class="text-base leading-10">How Do I register for this?</h4>
+        <p class="mt-2 hidden">
+          hgsghdjlsadjhjgvsbdnskjbhaghsavdbknbjhvgbanjhfdaghdjhksah
+          hsagdjkasjhsgdhjKSADGHJSBHDJSAHkjahhjsahdskajshvhdbsvcgvxhb
+          sbhvdgahjhsshg
+        </p>
+      </div>
+    </article>
+  </div>
+</section>
+
+ <!-- footer design -->
+ <footer class="footer flex p-8 md:p-2 justify-between items-center flex-wrap">
+  <div class="footer-text text-2xl">
+    <p>Copyright &copy; 2023 by JNTeck| All Rights Reserved.</p>
+  </div>
+
+  <div class="footer-iconTop">
+    <a href="#home" class="inline-flex items-center justify-center p-8 bg-main-color rounded-lg transition duration-500 ease-in-out transform hover:shadow-lg">
+       <i class=" text-second-bg-color text-2xl fa-solid fa-arrow-up-long"></i></a>
+  </div>
+</footer>
+
+
+
+<!-- Custom Js -->
+<script src="/js/home.js"></script>
+
+</body>
+</html>
