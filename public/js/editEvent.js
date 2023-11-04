@@ -9,6 +9,10 @@ document.addEventListener('DOMContentLoaded', function () {
           document.getElementById('category').value = data.category;
           document.getElementById('title').value = data.title;
           document.getElementById('description').value = data.description;
+          document.getElementById('category').value = data.category;
+          document.getElementById('title').value = data.title;
+          document.getElementById('description').value = data.description;
+        
           // Add more fields as needed
         })
         .catch((error) => console.error('Error fetching event details:', error));

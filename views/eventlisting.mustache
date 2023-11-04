@@ -136,7 +136,8 @@
             Edit
           </button>
           <button
-            class="bg-blue-500 text-white px-2 py-1 rounded hover-bg-blue-600"
+            id="{{ id }}"
+            class="delete-event bg-blue-500 text-white px-2 py-1 rounded hover-bg-blue-600"
           >
             Delete
           </button>
@@ -149,56 +150,57 @@
         >
           <form
             class="edit-form bg-white p-4 rounded-lg border border-gray-300 shadow-lg"
-            action="/updateEvent/{{ id }}"
+            action="/createEvent/events/{{ id }}/update"
             method="POST"
           >
             <!-- Input fields to edit event information -->
+            <label for="category">Category</label>
             <input
               class="block w-full"
               type="text"
-              name="editedCategory"
-              placeholder="Edit Category"
+              name="category"
               value="{{ category }}"
             />
+            <label for="title">Title</label>
             <input
               class="block w-full"
               type="text"
-              name="editedTitle"
-              placeholder="Edit Title"
+              name="Title"
               value="{{ title }}"
             />
+            <label for="description">Category</label>
             <input
               class="block w-full"
               type="text"
-              name="editedDescription"
-              placeholder="Edit Description"
+              name="description"
               value="{{ description }}"
             />
+            <label for="date">Date</label>
             <input
               class="block w-full"
               type="date"
-              name="editedDate"
-              placeholder="Edit Date"
+              name="Date"
               value="{{ date }}"
             />
+            <label for="Address">Address</label>
             <input
               class="block w-full"
               type="text"
-              name="editedFullAddress"
-              placeholder="Edit FullAddress"
+              name="fullAddress"
               value="{{ fullAddress }}"
             />
+            <label for="speakers">Speakers</label>
             <input
               class="block w-full"
               type="text"
-              name="editedNumberOfSpeakers"
-              placeholder="Edit NumberOfSpeakers"
+              name="NnumberOfSpeakers"
               value="{{ numberOfSpeakers }}"
             />
+            <label for="days">Days</label>
             <input
               class="block w-full"
               type="text"
-              name="editedNumberOfDays"
+              name="NumberOfDays"
               placeholder="Edit NumberOfDays"
               value="{{ numberOfDays }}"
             />
@@ -207,10 +209,29 @@
             <button type="submit" class="block w-full">Save</button>
           </form>
         </div>
+
+        <!-- delete event -->
+        <div
+          id="{{ id }}"
+          class="delete-event-modal absolute inset-0 hidden flex items-center justify-center"
+        >
+          <form
+            class="delete-form bg-white p-4 rounded-lg border border-gray-300 shadow-lg"
+            action="/createEvent//delete/{{ id }}"
+            method="POST"
+          >
+            <p>Delete this event</p>
+            <!-- Add more input fields for other properties -->
+            <button type="submit" class="block w-full bg-blue-600">
+              Delete
+            </button>
+          </form>
+        </div>
         {{/createdEvents}}
       </div>
     </div>
 
     <script src="/js/updateEvent.js"></script>
+    <script src="/js/deleteEvent.js"></script>
   </body>
 </html>

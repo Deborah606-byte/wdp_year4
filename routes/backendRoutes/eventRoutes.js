@@ -11,6 +11,7 @@ const {
 // Define routes
 router.post("/", createEvent);
 router.get("/", viewEvents);
-router.post("/updateEvent/:id", updateEvent); // Corrected route definition
+router.post("/events/:id/update", updateEvent);
+router.post("/delete/:id/", deleteEvent);
 
 module.exports = router;
